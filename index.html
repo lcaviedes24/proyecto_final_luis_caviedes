@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Gestión de Eventos</h1>
+        <button onclick="toggleForm()" class="btn btn-primary">Agregar Evento</button>
+    </div>
+
+    <input type="text" class="search-bar" placeholder="Buscar eventos por nombre o fecha">
+
+    <div id="eventForm" class="event-form" style="display: none;">
+        <form id="form">
+            <div class="form-group">
+                <label for="nombreEvento">Nombre del Evento</label>
+                <input type="text" id="nombreEvento" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaEvento">Fecha y Hora</label>
+                <input type="datetime-local" id="fechaEvento" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcionEvento">Descripción</label>
+                <textarea id="descripcionEvento" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" onclick="toggleForm()" class="btn btn-secondary">Cancelar</button>
+        </form>
+    </div>
+
+    <div id="eventsList" class="events-list">
+        <!-- Los eventos se mostrarán aquí dinámicamente -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
